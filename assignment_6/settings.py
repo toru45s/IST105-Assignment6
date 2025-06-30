@@ -75,11 +75,8 @@ WSGI_APPLICATION = 'assignment_6.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'cctbdb',
-        'CLIENT': {
-            'host': 'mongodb://cctb1:cctb2025@54.164.201.206:27017/cctbdb?authSource=cctbdb',
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

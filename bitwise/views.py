@@ -2,8 +2,10 @@ from django.shortcuts import render
 from .forms import NumberForm
 from pymongo import MongoClient
 import os
+from django.http import HttpResponse
 
-client = MongoClient(os.getenv("MONGO_URL", "mongodb://your-mongo-host:27017/"))
+
+client = MongoClient("mongodb://cctb1:cctb2025@54.164.201.206:27017/cctbdb?authSource=cctbdb")
 db = client["number_data"]
 collection = db["inputs"]
 
