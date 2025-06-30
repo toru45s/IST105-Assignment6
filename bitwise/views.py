@@ -6,7 +6,7 @@ from django.http import HttpResponse
 
 
 client = MongoClient("mongodb://cctb1:cctb2025@54.164.201.206:27017/cctbdb?authSource=cctbdb")
-db = client["number_data"]
+db = client["cctbdb"]
 collection = db["inputs"]
 
 def input_view(request):
