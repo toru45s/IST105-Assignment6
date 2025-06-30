@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number Processor</title>
+  </head>
+  <body>
+    <h1>Enter Five Numbers</h1>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+
+    {% if warning %}
+    <p style="color: red">{{ warning }}</p>
+    {% endif %} {% if result %}
+    <h2>Results:</h2>
+    <p>Original: {{ result.original }}</p>
+    <p>Sorted > 10: {{ result.sorted }}</p>
+    <p>Average: {{ result.average }}</p>
+    <p>Average > 50: {{ result.average_gt_50 }}</p>
+    <p>Positive Count: {{ result.positive_count }}</p>
+    <p>Even/Odd: {{ result.even_or_odd }}</p>
+    {% endif %}
+  </body>
+</html>
