@@ -3,9 +3,13 @@ from .forms import NumberForm
 from pymongo import MongoClient
 import os
 from django.http import HttpResponse
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
-client = MongoClient("mongodb://cctb1:cctb2025@54.164.201.206:27017/cctbdb?authSource=cctbdb")
+MONGO_URL = os.getenv("MONGO_URL")
+client = MongoClient(MONGO_URL)
 db = client["cctbdb"]
 collection = db["inputs"]
 
